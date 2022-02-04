@@ -1,0 +1,47 @@
+﻿@page
+@model ErrorModel
+@{
+    ViewData["Title"] = "Razor";
+
+    var dateTime = DateTime.Now;
+    var weekDay = DateTime.Today.DayOfWeek;
+    var day = Convert.ToString(weekDay);
+
+    string[] courses = {"DT057G - Webbutveckling I", "DT084G - Introduktion till programmering i JavaScript", "DT163G - Digital bildbehandling för webb", "GD008G - Typografi och form för webb",
+    "DT093G - Webbutveckling II", "DT003G - Databaser", "DT152G - Webbdesign för CMS", "DT068G - Webbanvändbarhet", "DT173G - Webbutveckling III", "DT162G - Javascriptbaserad Webbutveckling" };
+}
+
+<div>
+    <h2>Razor</h2>
+    <h3>Information</h3>
+
+    <br />
+
+    <p>Datum/Klockslag: @dateTime</p>
+
+    
+    <hr />
+    <br />
+
+    @if(day == "Monday")
+    {
+        <p>Idag är det måndag!</p>
+    }else
+    {
+        <p>Idag är det inte måndag!</p>
+    }
+
+    
+    <hr />
+    <br />
+
+    <p>Kurser jag har läst:</p>
+
+    <ul>
+        @foreach(var course in courses)
+        {
+            <li>@course</li>
+        }
+    </ul>
+
+</div>

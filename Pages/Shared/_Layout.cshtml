@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Webbutveckling_med_.NET___Moment_1._2</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Webbutveckling_med_.NET___Moment_1._2.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav>
+            <div>
+                <h1><a asp-area="" asp-page="/Index">Webbutveckling med .NET - Moment 1.2</a></h1>
+            </div>
+            <div class="date">
+                @{
+                    var dateTime = DateTime.Now;
+                    var date = dateTime.ToString("yyyy/MM/dd");
+                }
+                <p>Dagens datum är: @date</p>
+            </div>
+        </nav>
+    </header>
+    <div class="wrapper">
+        <aside>
+            <ul>
+                <li id="start"><a id="startA" asp-area="" asp-page="/Index">Start</a> </li>
+                
+                <li id="razor"><a id="razorA" asp-area="" asp-page="/Razor">Razor</a> </li>
+                
+                <li id="about"><a id="aboutA" asp-area="" asp-page="/About">Om</a> </li>
+            </ul>
+        </aside>
+        <main>
+            @RenderBody()
+        </main>
+    </div>
+
+
+    <footer>
+        <div>
+            <p>Emelie Frendel &copy; 2022 - Webbutveckling med .NET - Moment 1.2</p>
+            <p>Kontakta mig via e-post: <a href = "mailto:emfr2001@student.miun.se">emfr2001@student.miun.se</a></p>
+        </div>
+    </footer>
+
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
